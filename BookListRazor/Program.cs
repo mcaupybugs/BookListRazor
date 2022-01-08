@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Note : All the services and configuration are moved into the configuration object now.
 
 builder.Services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 var app = builder.Build();
